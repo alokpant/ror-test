@@ -1,5 +1,9 @@
-%h1
-  Pages#index
+%main.page
 
-%p
-  Find me in app/views/pages/index.html.haml
+  %h1
+    Welcome to the official page of "Elias' struggle with RoR"
+
+  %p
+    Yeah, this is the homepage!
+
+  = render('tasks/show')

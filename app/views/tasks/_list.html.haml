@@ -1,0 +1,7 @@
+%ul
+  - @tasks.each do|task|
+    %li
+      .description
+        = task.description
+      .is-done
+        = task.is_done.to_s

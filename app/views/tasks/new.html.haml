@@ -1,0 +1,10 @@
+=form_for :task, url: tasks_path do |f|
+  =f.label :description
+  %br
+  =f.text_field :description
+  %br
+  -# =f.label :is_done
+  -# %br
+  -# =f.check_box :is_done
+  %br
+  =f.submit
