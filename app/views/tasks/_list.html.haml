@@ -1,7 +1,8 @@
 %ul
   - @tasks.each do|task|
     %li
-      .description
+      .description{:class => ('done' if task.is_done)}
         = task.description
-      .is-done
-        = task.is_done.to_s
+        = link_to "<i>test</i>".html_safe, edit_task_path(task)
+
+= link_to "new", {:controller => "tasks", :action => "new"}
