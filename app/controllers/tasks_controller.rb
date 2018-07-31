@@ -9,10 +9,12 @@ class TasksController < ApplicationController
 
   def edit
     puts params[:id]
+    @submit_url = task_path
     @task = Task.find(params[:id])
   end
 
   def new
+    @submit_url = tasks_path
     @task = Task.new
   end
 
@@ -28,7 +30,7 @@ class TasksController < ApplicationController
     puts 'update ese'
     @task = Task.find(params[:id])
     if @task.update(post_params)
-      redirect_back()
+      redirect_to(:action => 'index')
     else
       render 'edit'
     end
