@@ -1,6 +1,6 @@
 # Elias' struggle with RoR
 
-The main purpose of this project is for me to get into ruby on rails. To achieve this, I recreate the classic (TodoMVC)[http://todomvc.com] in said environment. Let's see how that works out.
+The main purpose of this project is for me to get into ruby on rails. To achieve this, I recreate the classic [TodoMVC](http://todomvc.com) in said environment. Let's see how that works out.
 
 * Ruby version
 2.5.1
