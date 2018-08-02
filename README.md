@@ -1,24 +1,27 @@
-# README
+# Elias' struggle with RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+The main purpose of this project is for me to get into ruby on rails. To achieve this, I recreate the classic (TodoMVC)[http://todomvc.com] in said environment. Let's see how that works out.
 
 * Ruby version
+2.5.1
 
-* System dependencies
+* *System dependencies*
+Not yet researched
 
-* Configuration
+* *Configuration*
+No need to configure a thing right now
 
 * Database creation
+To create the database you have to run `rake db:create`
 
 * Database initialization
+To initialize the database you have to run `rake db:migrate`
 
-* How to run the test suite
+* *How to run the test suite*
+Not yet done
 
-* Services (job queues, cache servers, search engines, etc.)
+* *Services (job queues, cache servers, search engines, etc.)*
+Not yet done, and maybe not needed
 
-* Deployment instructions
-
-* ...
+* *Deployment instructions*
+Not yet done
