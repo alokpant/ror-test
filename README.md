@@ -17,6 +17,9 @@ To create the database you have to run `rake db:create`
 ## Database initialization
 To initialize the database you have to run `rake db:migrate`
 
+## How to run the project
+To run the server you have to execute `rails server`
+
 ## *How to run the test suite*
 Not yet done
 
