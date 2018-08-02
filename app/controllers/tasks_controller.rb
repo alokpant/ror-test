@@ -8,7 +8,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    puts params[:id]
     @submit_url = task_path
     @task = Task.find(params[:id])
   end
@@ -19,18 +18,46 @@ class TasksController < ApplicationController
   end
 
   def create
-    puts 'create ese'
     puts post_params
     @task = Task.new(post_params)
     @task.save
-    redirect_to(:action => 'index')
+    redirect_back fallback_location: 'pages#index'
   end
 
   def update
-    puts 'update ese'
     @task = Task.find(params[:id])
     if @task.update(post_params)
-      redirect_to(:action => 'index')
+      redirect_back fallback_location: 'pages#index'
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+
+    @task.destroy
+    redirect_back fallback_location: 'pages#index'
+  end
+
+  def mark_as_done
+    puts params
+    @task = Task.find(params[:task_id])
+
+    @task.is_done = true
+    if @task.save
+      redirect_back fallback_location: 'pages#index'
+    else
+      render 'edit'
+    end
+  end
+
+  def mark_as_undone
+    @task = Task.find(params[:task_id])
+
+    @task.is_done = false
+    if @task.save
+      redirect_back fallback_location: 'pages#index'
     else
       render 'edit'
     end

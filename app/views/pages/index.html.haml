@@ -4,6 +4,11 @@
     Welcome to the official page of "Elias' struggle with RoR"
 
   %p
-    Yeah, this is the homepage!
+    ToDo MVC in Rails.
 
-  = render('tasks/list')
+  = render('tasks/quick_form');
+  = render('tasks/list');
+
+  = link_to "<span class='filter #{"active"if @active_filter == "all"}'>all</span>".html_safe
+  = link_to "<span class='filter #{"active"if @active_filter == "are_undone"}'>active</span>".html_safe, :filter => "are_undone"
+  = link_to "<span class='filter #{"active"if @active_filter == "are_done"}'>completed</span>".html_safe, :filter => "are_done"

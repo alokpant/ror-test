@@ -5,3 +5,14 @@
 .page {
   font-family: sans-serif;
 }
+
+.filter {
+  display: inline-block;
+  padding: 12px 15px;
+  border-radius: 15rem;
+
+  &.active {
+    background: #66CC66;
+    color: white;
+  }
+}
