@@ -21,6 +21,7 @@ class TasksController < ApplicationController
     puts post_params
     @task = Task.new(post_params)
     @task.save
+    puts @task
     redirect_back fallback_location: 'pages#index'
   end
 
