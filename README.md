@@ -11,7 +11,7 @@ The main purpose of this project is for me to get into ruby on rails. To achieve
 ## Ruby version
 2.5.1
 
-## *System dependencies*  
+## *System dependencies*
 Not yet researched
 
 ## *Configuration*
