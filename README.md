@@ -2,6 +2,12 @@
 
 The main purpose of this project is for me to get into ruby on rails. To achieve this, I recreate the classic [TodoMVC](http://todomvc.com) in said environment. Let's see how that works out.
 
+## TL;DR
+### Installation
+1. `bundle install`
+2. `rake db:create`
+3. `rake db:migrate`
+
 ## Ruby version
 2.5.1
 
@@ -10,6 +16,9 @@ Not yet researched
 
 ## *Configuration*
 No need to configure a thing right now
+
+## Installation
+To install the project, run `bundle install`
 
 ## Database creation
 To create the database you have to run `rake db:create`
