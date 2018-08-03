@@ -1,5 +1,10 @@
 class PagesController < ApplicationController
   def index
+    @task = Task.new
+    if(params[:editing_task] != nil)
+      @editing_task = Task.find_by(:id => params[:editing_task])
+    end
+
     if(params[:filter] == nil)
       @active_filter = 'all'
       @tasks = Task.all

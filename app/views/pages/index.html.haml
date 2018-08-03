@@ -6,8 +6,8 @@
   %p
     ToDo MVC in Rails.
 
-  = render('tasks/quick_form');
-  = render('tasks/list');
+  = render 'tasks/quick_form', task: @task;
+  = render 'tasks/list';
 
   = link_to "<span class='filter #{"active"if @active_filter == "all"}'>all</span>".html_safe
   = link_to "<span class='filter #{"active"if @active_filter == "are_undone"}'>active</span>".html_safe, :filter => "are_undone"

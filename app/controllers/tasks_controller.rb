@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  layout :resolve_layout
+
   def index
     @tasks = Task.all
   end
