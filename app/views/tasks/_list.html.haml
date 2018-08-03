@@ -4,8 +4,8 @@
       .description{:class => ('done' if task.is_done)}
         = task.description
         - if(task.is_done)
-          = link_to "<i>uncheck</i>".html_safe, task_mark_as_undone_path(task), method: :post
+          = link_to "<i>uncheck</i>".html_safe, mark_as_undone_task_path(task), method: :post
         - else
-          = link_to "<i>check</i>".html_safe, task_mark_as_done_path(task), method: :post
+          = link_to "<i>check</i>".html_safe, mark_as_done_task_path(task), method: :post
 
         = link_to "<i>delete</i>".html_safe, task_path(task), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }

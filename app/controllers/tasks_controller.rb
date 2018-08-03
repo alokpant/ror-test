@@ -4,12 +4,12 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @task = Task.find_by(id: params[:id])
   end
 
   def edit
     @submit_url = task_path
-    @task = Task.find(params[:id])
+    @task = Task.find_by(id: params[:id])
   end
 
   def new
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
+    @task = Task.find_by(id: params[:id])
     if @task.update(post_params)
       redirect_back fallback_location: 'pages#index'
     else
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    @task = Task.find_by(id: params[:id])
 
     @task.destroy
     redirect_back fallback_location: 'pages#index'
@@ -43,7 +43,7 @@ class TasksController < ApplicationController
 
   def mark_as_done
     puts params
-    @task = Task.find(params[:task_id])
+    @task = Task.find_by(id: params[:id])
 
     @task.is_done = true
     if @task.save
@@ -54,7 +54,7 @@ class TasksController < ApplicationController
   end
 
   def mark_as_undone
-    @task = Task.find(params[:task_id])
+    @task = Task.find_by(id: params[:id])
 
     @task.is_done = false
     if @task.save
