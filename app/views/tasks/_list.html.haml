@@ -13,4 +13,4 @@
           = link_to "<i>delete</i>".html_safe, task_path(task), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
 
       - else
-        = render 'tasks/quick_form', task: task;
+        = render 'tasks/quick_form', task: task, submit_url: task_path(task);
