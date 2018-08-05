@@ -2,8 +2,29 @@
 
 The main purpose of this project is for me to get into ruby on rails. To achieve this, I recreate the classic [TodoMVC](http://todomvc.com) in said environment. Let's see how that works out.
 
-## TL;DR
-### Installation
+## Things I want to achieve:
+- [x] Creating  tasks
+- [x] Editing tasks
+  - [x] in Edit-form
+  - [x] marking tasks as done/undone inline
+  - [x] changing description inline
+- [x] Deleting tasks
+- [x] Listing existing tasks
+- [x] Filtering List of tasks
+- [ ] Deleting done tasks
+- [ ] Styling
+
+---
+*Default ToDoMVC until here*
+
+- [ ] Nice Transitions
+- [ ] Localization
+- [ ] User-Management
+  - [ ] User Login
+  - [ ] Different Task-sets for different Users
+  - [ ] Different rights i.e. Admin can manage all users, ordinary user can't
+
+## Installation
 1. `bundle install`
 2. `rake db:create`
 3. `rake db:migrate`

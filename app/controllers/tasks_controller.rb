@@ -20,7 +20,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    puts post_params
     @task = Task.new(post_params)
     @task.save
     puts @task
@@ -30,7 +29,11 @@ class TasksController < ApplicationController
   def update
     @task = Task.find_by(id: params[:id])
     if @task.update(post_params)
-      redirect_back fallback_location: 'pages#index'
+      if /\A?editing_task=[^&]+&*/.match request.referrer
+        redirect_to request.referrer.sub(/\A?editing_task=[^&]+&*/, '')
+      else
+        redirect_back fallback_location: 'pages#index'
+      end
     else
       render 'edit'
     end
