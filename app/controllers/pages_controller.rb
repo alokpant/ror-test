@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
     @task = Task.new
+    @there_are_done_items = Task.find_by(:is_done => true)
 
     if(params[:editing_task] != nil)
       @editing_task = Task.find_by(:id => params[:editing_task])

@@ -22,7 +22,6 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(post_params)
     @task.save
-    puts @task
     redirect_back fallback_location: 'pages#index'
   end
 
@@ -39,6 +38,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def clear_completed
+    Task.where(:is_done => true).each do |task|
+      task.destroy
+    end
+
+    redirect_back fallback_location: 'pages#index'
+  end
+
   def destroy
     @task = Task.find_by(id: params[:id])
 
@@ -47,7 +54,6 @@ class TasksController < ApplicationController
   end
 
   def mark_as_done
-    puts params
     @task = Task.find_by(id: params[:id])
 
     @task.is_done = true

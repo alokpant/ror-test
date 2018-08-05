@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :tasks do
+    collection do
+      post :clear_completed
+    end
+
     member do
       post :mark_as_done
       post :mark_as_undone
