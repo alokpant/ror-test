@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def index
     @task = Task.new
+
     if(params[:editing_task] != nil)
       @editing_task = Task.find_by(:id => params[:editing_task])
     end
@@ -14,10 +15,8 @@ class PagesController < ApplicationController
 
       if params[:filter] == 'are_done'
         @tasks = @tasks.are_done(true)
-      else
-        if params[:filter] == 'are_undone'
-          @tasks = @tasks.are_done(false)
-        end
+      elsif params[:filter] == 'are_undone'
+        @tasks = @tasks.are_done(false)
       end
     end
   end
