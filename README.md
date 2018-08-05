@@ -12,6 +12,7 @@ The main purpose of this project is for me to get into ruby on rails. To achieve
 - [x] Listing existing tasks
 - [x] Filtering List of tasks
 - [x] Deleting done tasks
+- [ ] Marking all visible tasks as done
 - [ ] Styling
 
 ---
