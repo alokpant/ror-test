@@ -1,7 +1,7 @@
 %ul.tasks.list
-  - @tasks.each do|task|
+  - tasks.each do|task|
     %li.task.list_item{:data => {:id => task.id}}
-      - if @editing_task != task
+      - if editing_task != task
         .description{:class => ('done' if task.is_done)}
           = task.description
 

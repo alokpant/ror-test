@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tasks do
     collection do
       post :clear_completed
+      post :complete_all
     end
 
     member do
