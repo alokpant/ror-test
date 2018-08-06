@@ -8,7 +8,11 @@
 
   = render 'tasks/quick_form', task: @task, submit_url: tasks_path;
   = render 'tasks/list', tasks: @visible_tasks, editing_task: @editing_task;
-  = link_to "<span class=\"filter #{"active"if @active_filter == "all"}\">all</span>".html_safe, complete_all_tasks_path(@visible_tasks), method: :post
+
+  -if !@visible_tasks.all? {|task| task.is_done}
+    = link_to "<span class=\"\">Check all</span>".html_safe, complete_all_tasks_path(:tasks => @visible_tasks), method: :post
+  -else
+    = link_to "<span class=\"\">Uncheck all</span>".html_safe, uncomplete_all_tasks_path(:tasks => @visible_tasks), method: :post
 
   = link_to "<span class=\"filter #{"active"if @active_filter == "all"}\">all</span>".html_safe
   = link_to "<span class=\"filter #{"active"if @active_filter == "are_undone"}\">active</span>".html_safe, :filter => "are_undone"

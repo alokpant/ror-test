@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       post :clear_completed
       post :complete_all
+      post :uncomplete_all
     end
 
     member do

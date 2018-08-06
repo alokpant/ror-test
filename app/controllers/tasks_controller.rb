@@ -19,6 +19,28 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def complete_all
+    puts params
+    tasks = params[:tasks]
+    tasks.each do |task|
+      task.is_done = true
+      task.save
+    end
+
+    redirect_back fallback_location: 'pages#index'
+  end
+
+  def uncomplete_all
+    puts params
+    tasks = params[:tasks]
+    tasks.each do |task|
+      task.is_done = false
+      task.save
+    end
+
+    redirect_back fallback_location: 'pages#index'
+  end
+
   def create
     @task = Task.new(post_params)
     @task.save
